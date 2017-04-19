@@ -1,0 +1,9 @@
+Creating non partitioned table
+CREATE TABLE IF NOT EXISTS real_estate(street string,city string,zip bigint,state string,beds int,baths int, sq_ft int,type string,sale_date string,price bigint,latitude float,longitude float)                         
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
+
+
+Loading Data
+LOAD DATA LOCAL INPATH '/home/acadgild/Downloads/real_estate.csv' OVERWRITE INTO TABLE real_estate;
